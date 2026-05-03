@@ -1,6 +1,18 @@
 class ApiConstants {
-  static const String baseUrl = 'https://api-novel.wign.cloud';
-  static const String internalKey = 'silviavoniliade';
+  static const String baseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'http://localhost:8000',
+  );
+
+  static const String internalKey = String.fromEnvironment(
+    'INTERNAL_KEY',
+    defaultValue: '',
+  );
+
+  static const String apiKey = String.fromEnvironment(
+    'API_KEY',
+    defaultValue: '',
+  );
 
   static const String login = '/api/v1/auth/login';
   static const String register = '/api/v1/auth/register';

@@ -14,6 +14,7 @@ class DioClient {
             headers: {
               'Content-Type': 'application/json',
               'X-Internal-Key': ApiConstants.internalKey,
+              'x-api-key' : ApiConstants.apiKey,
             },
           ),
         ) {
