@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:nhive/features/auth/domain/entities/user.dart';
 import 'package:nhive/features/auth/data/repositories/auth_repository_impl.dart';

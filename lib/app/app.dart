@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:nhive/core/di/service_locator.dart';
-import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
-import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
-import 'package:nhive/features/library/presentation/bloc/library_provider.dart';
 import 'package:nhive/features/novels/presentation/pages/novel_list_page.dart';
 import 'package:nhive/features/auth/presentation/pages/login_page.dart';
 import 'package:nhive/features/auth/presentation/pages/register_page.dart';
@@ -37,7 +34,9 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => const RegisterPage());
             case '/detail':
               final slug = settings.arguments as String? ?? '';
-              return MaterialPageRoute(builder: (_) => NovelDetailPage(slug: slug));
+              return MaterialPageRoute(
+                builder: (_) => NovelDetailPage(slug: slug),
+              );
             case '/reader':
               final args = settings.arguments as Map<String, dynamic>? ?? {};
               return MaterialPageRoute(

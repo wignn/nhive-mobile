@@ -36,7 +36,10 @@ class NovelProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final result = await _repository.getNovels(page: _currentPage, pageSize: 18);
+      final result = await _repository.getNovels(
+        page: _currentPage,
+        pageSize: 18,
+      );
       if (refresh) {
         _novels = result;
       } else {

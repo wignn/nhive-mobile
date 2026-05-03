@@ -24,5 +24,4 @@ class ApiConstants {
   static const String progress = '/api/v1/progress';
   static const String search = '/api/v1/search';
   static const String genres = '/api/v1/genres';
-
 }

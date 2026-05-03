@@ -9,7 +9,12 @@ class NovelCard extends StatelessWidget {
   final VoidCallback? onTap;
   final bool showAuthor;
 
-  const NovelCard({super.key, required this.novel, this.onTap, this.showAuthor = true});
+  const NovelCard({
+    super.key,
+    required this.novel,
+    this.onTap,
+    this.showAuthor = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +58,7 @@ class NovelCard extends StatelessWidget {
               novel.author ?? 'Unknown Author',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontSize: 11,
-                color: AppTheme.muted,
-              ),
+              style: const TextStyle(fontSize: 11, color: AppTheme.muted),
             ),
           ],
         ],
@@ -90,7 +92,11 @@ class NovelCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.auto_stories_rounded, color: AppTheme.muted, size: 32),
+            const Icon(
+              Icons.auto_stories_rounded,
+              color: AppTheme.muted,
+              size: 32,
+            ),
             const SizedBox(height: 4),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),

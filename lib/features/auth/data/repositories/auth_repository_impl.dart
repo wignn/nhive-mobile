@@ -15,7 +15,7 @@ class AuthRepositoryImpl implements AuthRepository {
     final data = await remoteDataSource.login(email, password);
     final accessToken = data['access_token'];
     final refreshToken = data['refresh_token'];
-    
+
     if (accessToken != null) {
       await secureStorage.saveToken(accessToken);
     }
