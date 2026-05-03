@@ -1,13 +1,13 @@
-import 'package:mobile/core/storage/secure_storage.dart';
-import 'package:mobile/core/network/auth_interceptor.dart';
-import 'package:mobile/core/network/dio_client.dart';
-import 'package:mobile/features/auth/data/datasources/auth_remote_datasource.dart';
-import 'package:mobile/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:mobile/features/novels/data/datasources/novel_remote_datasource.dart';
-import 'package:mobile/features/novels/data/repositories/novel_repository_impl.dart';
-import 'package:mobile/features/novels/presentation/bloc/novel_provider.dart';
-import 'package:mobile/features/auth/presentation/bloc/auth_provider.dart';
-import 'package:mobile/features/library/presentation/bloc/library_provider.dart';
+import 'package:nhive/core/storage/secure_storage.dart';
+import 'package:nhive/core/network/auth_interceptor.dart';
+import 'package:nhive/core/network/dio_client.dart';
+import 'package:nhive/features/auth/data/datasources/auth_remote_datasource.dart';
+import 'package:nhive/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:nhive/features/novels/data/datasources/novel_remote_datasource.dart';
+import 'package:nhive/features/novels/data/repositories/novel_repository_impl.dart';
+import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/features/library/presentation/bloc/library_provider.dart';
 
 class ServiceLocator {
   static final ServiceLocator _instance = ServiceLocator._internal();

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:mobile/core/constants/api_constants.dart';
-import 'package:mobile/core/network/auth_interceptor.dart';
+import 'package:nhive/core/constants/api_constants.dart';
+import 'package:nhive/core/network/auth_interceptor.dart';
 
 class DioClient {
   final Dio _dio;

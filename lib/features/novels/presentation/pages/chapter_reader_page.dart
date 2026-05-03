@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/novels/presentation/bloc/novel_provider.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
 
 class ChapterReaderPage extends StatefulWidget {
   final String slug;

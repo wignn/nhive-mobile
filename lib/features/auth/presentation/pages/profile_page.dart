@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

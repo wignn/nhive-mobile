@@ -1,9 +1,9 @@
-import 'package:mobile/features/novels/domain/repositories/novel_repository.dart';
-import 'package:mobile/features/novels/data/datasources/novel_remote_datasource.dart';
-import 'package:mobile/features/novels/domain/entities/novel.dart';
-import 'package:mobile/features/novels/domain/entities/chapter.dart';
-import 'package:mobile/features/novels/data/models/novel_model.dart';
-import 'package:mobile/features/novels/data/models/chapter_model.dart';
+import 'package:nhive/features/novels/domain/repositories/novel_repository.dart';
+import 'package:nhive/features/novels/data/datasources/novel_remote_datasource.dart';
+import 'package:nhive/features/novels/domain/entities/novel.dart';
+import 'package:nhive/features/novels/domain/entities/chapter.dart';
+import 'package:nhive/features/novels/data/models/novel_model.dart';
+import 'package:nhive/features/novels/data/models/chapter_model.dart';
 
 class NovelRepositoryImpl implements NovelRepository {
   final NovelRemoteDataSource remoteDataSource;

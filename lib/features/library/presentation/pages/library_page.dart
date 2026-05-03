@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/library/presentation/bloc/library_provider.dart';
-import 'package:mobile/features/auth/presentation/bloc/auth_provider.dart';
-import 'package:mobile/features/novels/presentation/widgets/novel_card.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/library/presentation/bloc/library_provider.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/features/novels/presentation/widgets/novel_card.dart';
 
 class LibraryPage extends StatefulWidget {
   const LibraryPage({super.key});

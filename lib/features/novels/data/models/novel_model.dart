@@ -1,4 +1,4 @@
-import 'package:mobile/core/constants/api_constants.dart';
+import 'package:nhive/core/constants/api_constants.dart';
 import '../../domain/entities/novel.dart';
 
 class NovelModel extends Novel {

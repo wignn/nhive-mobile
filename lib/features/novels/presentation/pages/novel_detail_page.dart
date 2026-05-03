@@ -3,10 +3,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/novels/presentation/bloc/novel_provider.dart';
-import 'package:mobile/features/library/presentation/bloc/library_provider.dart';
-import 'package:mobile/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
+import 'package:nhive/features/library/presentation/bloc/library_provider.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
 
 class NovelDetailPage extends StatefulWidget {
   final String slug;

@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/novels/presentation/bloc/novel_provider.dart';
-import 'package:mobile/features/novels/presentation/widgets/novel_card.dart';
-import 'package:mobile/features/novels/domain/entities/novel.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
+import 'package:nhive/features/novels/presentation/widgets/novel_card.dart';
+import 'package:nhive/features/novels/domain/entities/novel.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});

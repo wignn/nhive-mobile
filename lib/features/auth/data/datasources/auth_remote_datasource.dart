@@ -1,5 +1,5 @@
-import 'package:mobile/core/network/dio_client.dart';
-import 'package:mobile/core/constants/api_constants.dart';
+import 'package:nhive/core/network/dio_client.dart';
+import 'package:nhive/core/constants/api_constants.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Map<String, dynamic>> login(String email, String password);

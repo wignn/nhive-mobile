@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:mobile/core/network/dio_client.dart';
-import 'package:mobile/core/constants/api_constants.dart';
-import 'package:mobile/features/novels/domain/entities/novel.dart';
-import 'package:mobile/features/novels/data/models/novel_model.dart';
+import 'package:nhive/core/network/dio_client.dart';
+import 'package:nhive/core/constants/api_constants.dart';
+import 'package:nhive/features/novels/domain/entities/novel.dart';
+import 'package:nhive/features/novels/data/models/novel_model.dart';
 
 class LibraryProvider extends ChangeNotifier {
   final DioClient _client;

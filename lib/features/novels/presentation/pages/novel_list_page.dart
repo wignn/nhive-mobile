@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/novels/presentation/widgets/novel_card.dart';
-import 'package:mobile/features/novels/presentation/bloc/novel_provider.dart';
-import 'package:mobile/features/auth/presentation/bloc/auth_provider.dart';
-import 'package:mobile/features/library/presentation/pages/library_page.dart';
-import 'package:mobile/features/search/presentation/pages/search_page.dart';
-import 'package:mobile/features/auth/presentation/pages/profile_page.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/novels/presentation/widgets/novel_card.dart';
+import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/features/library/presentation/pages/library_page.dart';
+import 'package:nhive/features/search/presentation/pages/search_page.dart';
+import 'package:nhive/features/auth/presentation/pages/profile_page.dart';
 
 class NovelListPage extends StatefulWidget {
   const NovelListPage({super.key});

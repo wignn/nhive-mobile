@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:mobile/app/theme/app_theme.dart';
-import 'package:mobile/features/novels/domain/entities/novel.dart';
+import 'package:nhive/app/theme/app_theme.dart';
+import 'package:nhive/features/novels/domain/entities/novel.dart';
 
 class NovelCard extends StatelessWidget {
   final Novel novel;

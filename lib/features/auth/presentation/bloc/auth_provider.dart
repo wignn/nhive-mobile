@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:mobile/features/auth/domain/entities/user.dart';
-import 'package:mobile/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:mobile/core/storage/secure_storage.dart';
+import 'package:nhive/features/auth/domain/entities/user.dart';
+import 'package:nhive/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:nhive/core/storage/secure_storage.dart';
 
 enum AuthStatus { initial, loading, authenticated, unauthenticated, error }
 

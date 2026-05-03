@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:mobile/core/di/service_locator.dart';
-import 'package:mobile/features/novels/presentation/bloc/novel_provider.dart';
-import 'package:mobile/features/auth/presentation/bloc/auth_provider.dart';
-import 'package:mobile/features/library/presentation/bloc/library_provider.dart';
-import 'package:mobile/features/novels/presentation/pages/novel_list_page.dart';
-import 'package:mobile/features/auth/presentation/pages/login_page.dart';
-import 'package:mobile/features/auth/presentation/pages/register_page.dart';
-import 'package:mobile/features/novels/presentation/pages/novel_detail_page.dart';
-import 'package:mobile/features/novels/presentation/pages/chapter_reader_page.dart';
-import 'package:mobile/app/theme/app_theme.dart';
+import 'package:nhive/core/di/service_locator.dart';
+import 'package:nhive/features/novels/presentation/bloc/novel_provider.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/features/library/presentation/bloc/library_provider.dart';
+import 'package:nhive/features/novels/presentation/pages/novel_list_page.dart';
+import 'package:nhive/features/auth/presentation/pages/login_page.dart';
+import 'package:nhive/features/auth/presentation/pages/register_page.dart';
+import 'package:nhive/features/novels/presentation/pages/novel_detail_page.dart';
+import 'package:nhive/features/novels/presentation/pages/chapter_reader_page.dart';
+import 'package:nhive/app/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

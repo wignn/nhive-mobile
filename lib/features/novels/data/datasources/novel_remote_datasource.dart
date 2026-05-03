@@ -1,5 +1,5 @@
-import 'package:mobile/core/network/dio_client.dart';
-import 'package:mobile/core/constants/api_constants.dart';
+import 'package:nhive/core/network/dio_client.dart';
+import 'package:nhive/core/constants/api_constants.dart';
 
 abstract class NovelRemoteDataSource {
   Future<Map<String, dynamic>> getNovels({int page = 1, int pageSize = 18, String sort = 'updated'});

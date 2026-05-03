@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:mobile/features/novels/domain/entities/novel.dart';
-import 'package:mobile/features/novels/domain/entities/chapter.dart';
-import 'package:mobile/features/novels/domain/repositories/novel_repository.dart';
+import 'package:nhive/features/novels/domain/entities/novel.dart';
+import 'package:nhive/features/novels/domain/entities/chapter.dart';
+import 'package:nhive/features/novels/domain/repositories/novel_repository.dart';
 
 class NovelProvider extends ChangeNotifier {
   final NovelRepository _repository;
