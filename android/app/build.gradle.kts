@@ -62,8 +62,9 @@ android {
     applicationVariants.all {
         val variant = this
         outputs.all {
-            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output.outputFileName = "nhive-${variant.buildType.name}-v${variant.versionName}.apk"
+            if (this is com.android.build.gradle.internal.api.BaseVariantOutputImpl) {
+                outputFileName = "nhive-${variant.buildType.name}-v${variant.versionName}.apk"
+            }
         }
     }
 }

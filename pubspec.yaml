@@ -68,7 +68,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/ 
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -104,4 +105,4 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/logo.png"
   adaptive_icon_background: "#1a1a2e"
-  adaptive_icon_foreground: "assets/image.png"
+  adaptive_icon_foreground: "assets/logo.png"  
