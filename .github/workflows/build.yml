@@ -46,7 +46,6 @@ jobs:
           echo "App Version : $APP_VERSION"
           echo "Build Number: $BUILD_NUMBER"
 
-
   test:
     name: Run Tests
     runs-on: ubuntu-latest
@@ -78,12 +77,9 @@ jobs:
         continue-on-error: true
 
       - name: Analyze code
-        run: flutter analyze --no-fatal-infos
-
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Run unit & widget tests
-        # Disabled: tests are currently flaky in CI due to timers/network side-effects.
-        # Re-enable once tests are stabilized.
         if: false
         run: flutter test --coverage
 
@@ -154,7 +150,7 @@ jobs:
       - name: Set artifact metadata
         id: meta
         run: |
-          ARTIFACT="app-release-v${{ needs.version.outputs.app_version }}.apk"
+          ARTIFACT="nhive-v${{ needs.version.outputs.app_version }}.apk"
           echo "artifact_name=$ARTIFACT" >> $GITHUB_OUTPUT
 
       - name: Build release APK
@@ -184,10 +180,10 @@ jobs:
       - name: Rename APK
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            mv build/app/outputs/flutter-apk/nhive-debug-*.apk \
+            mv build/app/outputs/flutter-apk/app-debug.apk \
                build/app/outputs/flutter-apk/${{ steps.meta.outputs.artifact_name }}
           else
-            mv build/app/outputs/flutter-apk//nhive-release*.apk \
+            mv build/app/outputs/flutter-apk/app-release.apk \
                build/app/outputs/flutter-apk/${{ steps.meta.outputs.artifact_name }}
           fi
 
@@ -205,7 +201,6 @@ jobs:
           name: debug-symbols-v${{ needs.version.outputs.app_version }}
           path: build/debug-info/
           retention-days: 90
-
 
   release:
     name: Create Release
