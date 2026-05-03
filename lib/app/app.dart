@@ -6,6 +6,8 @@ import 'package:nhive/features/auth/presentation/pages/login_page.dart';
 import 'package:nhive/features/auth/presentation/pages/register_page.dart';
 import 'package:nhive/features/novels/presentation/pages/novel_detail_page.dart';
 import 'package:nhive/features/novels/presentation/pages/chapter_reader_page.dart';
+import 'package:nhive/features/auth/presentation/bloc/auth_provider.dart';
+import 'package:nhive/features/library/presentation/bloc/library_provider.dart';
 import 'package:nhive/app/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {

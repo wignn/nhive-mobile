@@ -1,6 +1,7 @@
 import 'package:nhive/core/storage/secure_storage.dart';
 import 'package:nhive/core/network/auth_interceptor.dart';
 import 'package:nhive/core/network/dio_client.dart';
+import 'package:nhive/core/services/notification_service.dart';
 import 'package:nhive/features/auth/data/datasources/auth_remote_datasource.dart';
 import 'package:nhive/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:nhive/features/novels/data/datasources/novel_remote_datasource.dart';
@@ -17,6 +18,7 @@ class ServiceLocator {
   late final SecureStorage secureStorage;
   late final AuthInterceptor authInterceptor;
   late final DioClient dioClient;
+  late final NotificationService notificationService;
   late final AuthRemoteDataSourceImpl authRemoteDataSource;
   late final AuthRepositoryImpl authRepository;
   late final NovelRemoteDataSourceImpl novelRemoteDataSource;
@@ -29,6 +31,7 @@ class ServiceLocator {
     secureStorage = SecureStorage();
     authInterceptor = AuthInterceptor(secureStorage);
     dioClient = DioClient(authInterceptor);
+    notificationService = NotificationService(dioClient, secureStorage);
 
     // Auth
     authRemoteDataSource = AuthRemoteDataSourceImpl(dioClient);

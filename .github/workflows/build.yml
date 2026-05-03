@@ -130,6 +130,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Setup Firebase (google-services.json)
+        run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
+
       - name: Decode & setup keystore
         if: github.event_name != 'pull_request'
         env:
