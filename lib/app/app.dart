@@ -16,8 +16,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: sl.novelProvider),
-        ChangeNotifierProvider.value(value: sl.authProvider),
         ChangeNotifierProvider.value(value: sl.libraryProvider),
+        ChangeNotifierProxyProvider<LibraryProvider, AuthProvider>(
+          create: (_) => sl.authProvider,
+          update: (_, library, auth) {
+            auth!.updateLibraryProvider(library);
+            return auth;
+          },
+        ),
       ],
       child: MaterialApp(
         title: 'NovelHive',
