@@ -162,6 +162,7 @@ jobs:
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           INTERNAL_KEY: ${{ secrets.INTERNAL_KEY }}
           API_KEY: ${{ secrets.API_KEY }}
+          GOOGLE_WEB_CLIENT_ID: ${{ secrets.GOOGLE_WEB_CLIENT_ID }}
         run: |
           flutter build apk \
             --release \
@@ -169,7 +170,8 @@ jobs:
             --split-debug-info=build/debug-info \
             --dart-define=API_BASE_URL="$API_BASE_URL" \
             --dart-define=INTERNAL_KEY="$INTERNAL_KEY" \
-            --dart-define=API_KEY="$API_KEY"
+            --dart-define=API_KEY="$API_KEY" \
+            --dart-define=GOOGLE_WEB_CLIENT_ID"$GOOGLE_WEB_CLIENT_ID"
 
       - name: Build debug APK (PR only)
         if: github.event_name == 'pull_request'
