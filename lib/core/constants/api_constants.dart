@@ -14,9 +14,16 @@ class ApiConstants {
     defaultValue: '',
   );
 
+  static const String googleWebClientId = String.fromEnvironment(
+    'GOOGLE_WEB_CLIENT_ID',
+    defaultValue: '',
+  );
+
   static const String login = '/api/v1/auth/login';
   static const String register = '/api/v1/auth/register';
+  static const String googleLogin = '/api/v1/auth/google';
   static const String me = '/api/v1/auth/me';
+  static const String avatar = '/api/v1/auth/avatar';
 
   // Novels
   static const String novels = '/api/v1/novels';

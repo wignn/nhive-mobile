@@ -1,14 +1,17 @@
+import 'package:dio/dio.dart';
 import 'package:nhive/core/network/dio_client.dart';
 import 'package:nhive/core/constants/api_constants.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Map<String, dynamic>> login(String email, String password);
+  Future<Map<String, dynamic>> loginWithGoogle(String idToken);
   Future<Map<String, dynamic>> register(
     String username,
     String email,
     String password,
   );
   Future<Map<String, dynamic>> getMe();
+  Future<Map<String, dynamic>> uploadAvatar(String filePath);
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -21,6 +24,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final response = await _client.post(
       ApiConstants.login,
       data: {'email': email, 'password': password},
+    );
+    return response.data;
+  }
+
+  @override
+  Future<Map<String, dynamic>> loginWithGoogle(String idToken) async {
+    final response = await _client.post(
+      ApiConstants.googleLogin,
+      data: {'id_token': idToken},
     );
     return response.data;
   }
@@ -41,6 +53,20 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<Map<String, dynamic>> getMe() async {
     final response = await _client.get(ApiConstants.me);
+    return response.data;
+  }
+
+  @override
+  Future<Map<String, dynamic>> uploadAvatar(String filePath) async {
+    final filename = filePath.split(RegExp(r'[/\\]')).last;
+    final formData = FormData.fromMap({
+      'image': await MultipartFile.fromFile(filePath, filename: filename),
+    });
+    final response = await _client.post(
+      ApiConstants.avatar,
+      data: formData,
+      options: Options(contentType: 'multipart/form-data'),
+    );
     return response.data;
   }
 }

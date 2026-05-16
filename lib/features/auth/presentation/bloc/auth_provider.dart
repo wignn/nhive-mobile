@@ -33,6 +33,9 @@ class AuthProvider extends ChangeNotifier {
   String? _error;
   String? get error => _error;
 
+  bool _isUploadingAvatar = false;
+  bool get isUploadingAvatar => _isUploadingAvatar;
+
   Future<void> checkAuth() async {
     final token = await _storage.getToken();
     if (token != null && token.isNotEmpty) {
@@ -70,6 +73,26 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  Future<bool> loginWithGoogle(String idToken) async {
+    _status = AuthStatus.loading;
+    _error = null;
+    notifyListeners();
+
+    try {
+      _user = await _repository.loginWithGoogle(idToken);
+      _status = AuthStatus.authenticated;
+      _libraryProvider?.loadLibrary();
+      await _notificationService.registerCurrentToken();
+      notifyListeners();
+      return true;
+    } catch (e) {
+      _error = _parseError(e);
+      _status = AuthStatus.error;
+      notifyListeners();
+      return false;
+    }
+  }
+
   Future<bool> register(String username, String email, String password) async {
     _status = AuthStatus.loading;
     _error = null;
@@ -93,6 +116,26 @@ class AuthProvider extends ChangeNotifier {
     _status = AuthStatus.unauthenticated;
     _libraryProvider?.clear();
     notifyListeners();
+  }
+
+  Future<bool> uploadAvatar(String filePath) async {
+    if (_status != AuthStatus.authenticated) return false;
+
+    _isUploadingAvatar = true;
+    _error = null;
+    notifyListeners();
+
+    try {
+      _user = await _repository.uploadAvatar(filePath);
+      _isUploadingAvatar = false;
+      notifyListeners();
+      return true;
+    } catch (e) {
+      _error = _parseError(e);
+      _isUploadingAvatar = false;
+      notifyListeners();
+      return false;
+    }
   }
 
   String _parseError(dynamic e) {
