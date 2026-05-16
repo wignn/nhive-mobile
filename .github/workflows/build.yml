@@ -180,7 +180,8 @@ jobs:
             --debug \
             --dart-define=API_BASE_URL="https://staging.example.com" \
             --dart-define=INTERNAL_KEY="dev-key" \
-            --dart-define=API_KEY="dev-api-key"
+            --dart-define=API_KEY="dev-api-key" 
+            
 
       - name: Rename APK
         run: |

@@ -81,9 +81,15 @@ class _LoginPageState extends State<LoginPage> {
       }
     } catch (e) {
       if (!mounted) return;
+      
+      final errorStr = e.toString();
+      if (errorStr.contains('canceled') || errorStr.contains('cancelled') || errorStr.contains('sign_in_canceled')) {
+        return;
+      }
+
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(e.toString().replaceFirst('Exception: ', '')),
+          content: Text(errorStr.replaceFirst('Exception: ', '')),
           backgroundColor: Colors.redAccent,
         ),
       );
